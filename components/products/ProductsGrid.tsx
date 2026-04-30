@@ -11,11 +11,11 @@ function ProductsGrid({ products }: { products: Product[] }) {
     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 pt-8">
       {products.map((product) => {
         const { name, price, image } = product;
-        const productID = product.id;
+        const productId = product.id;
         const dollarsAmount = formatCurrency(price);
         return (
-          <article key={productID} className="group relative">
-            <Link href={"/product/${productID}"}>
+          <article key={productId} className="group relative">
+            <Link href={`/products/${productId}`}>
               <Card className="transform group-hover:shadow-xl transition-shadow duration-300 ">
                 <CardContent className="p-4">
                   <div className="relative h-64 md:h-48 rounded overflow-hidden">
@@ -39,7 +39,7 @@ function ProductsGrid({ products }: { products: Product[] }) {
               </Card>
             </Link>
             <div className="absolute top-7 right-7 z-5">
-              <FavoriteToggleButton productId={productID} />
+              <FavoriteToggleButton productId={productId} />
             </div>
           </article>
         );
