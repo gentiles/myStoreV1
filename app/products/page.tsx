@@ -4,7 +4,7 @@ import React from "react";
 async function ProductsPage({
   searchParams,
 }: {
-  searchParams: { layout?: string; search?: string };
+  searchParams: { search: string; layout: string };
 }) {
   const layout = searchParams.layout || "grid";
   const search = searchParams.search || "";
